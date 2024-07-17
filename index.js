@@ -1,12 +1,17 @@
-const req = await fetch('https://fortnite-api.com/v2/shop/br', {
-    headers: {
-        'Authorization': '7589aa98-088e-4934-8b8e-4adc1979b0b2'
-    }
-})
+const dat = {}
 
-const it = await req.json()
 
-for (const a of it.data.featured.entries) {
+function Set (res) {
+    console.log(res['data']['featured']['entries'])
+    dat['datta'] = res
+}
+
+const req = fetch('https://fortnite-api.com/v2/shop/br').then(response => response.json()).then(
+    (result) => {Set(result)}
+)
+
+
+for (const a of dt.data.featured.entries) {
     if (a.banner && a.bundle && a.bundle.name) {
         const {bundle, finalPrice, banner} = a
             console.log(`
@@ -17,3 +22,4 @@ for (const a of it.data.featured.entries) {
     }
 }
 
+console.log(dat)

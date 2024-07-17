@@ -1,5 +1,10 @@
+import Tovars from './components/Tovars/Tovars'
+
+
 export default function App () {
     return (
-        <h1>Hello world</h1>
+        <>
+            <Tovars />
+        </>
     )
 }
