@@ -1,13 +1,13 @@
 import Buttons from '../Button/Buttons'
 
 
-export default function InfoTovarCard (props) {
+export default function InfoTovarCard (props, card, func_click, index) {
     return (
         <>
         <p>Название: {props.name}</p>
         <p>Цена: <span>{props.price}</span></p>
         <p>Количество: <span>{props.count}</span></p>
-        <Buttons />
+        <Buttons card={card} func_click={func_click} index={index}/>
         <hr/>
         </>
     )

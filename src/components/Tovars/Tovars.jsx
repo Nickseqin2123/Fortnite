@@ -11,6 +11,10 @@ export default function Tovars () {
         items: []
     })
 
+    const [products, setProducts] = useState({
+        items: []
+    })
+
     useEffect(() => {
         fetch('https://fortnite-api.com/v2/shop/br').then(res => res.json()).then((result) => {
             setVal({
@@ -28,10 +32,10 @@ export default function Tovars () {
     } else {
         return (
             <>
-            <Card />
+            <Card products={products} func_set={setProducts}/>
                 <div className={classes.carts}>
                     {val.items.map((data) => {
-                        return Tovar(data)
+                        return Tovar(data, setProducts, products.items)
                     })}
                 </div>
             </>
